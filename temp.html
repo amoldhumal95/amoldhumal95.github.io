@@ -1,0 +1,49 @@
+<div class="row space-rows">
+    <div class="col">
+            <div class="card cards-shadown cards-hover" data-aos="slide-up" data-aos-duration="950">
+                <div class="card-header" style="height:150px">
+                    <span class="space">
+                        <i class="fa fa-star"  id="download-icon">
+                        </i>
+                    </span>
+                    <div class="text-left cardheader-text">
+                        <h1 class="text-capitalize" id="heading-card" style="font-size: 40px;">@Html.DisplayFor(modelItem => item.Name)</h1>
+                    </div>
+                </div>
+                <div class="card-body" style="margin-left:10px;">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text sub-text-color" style="color: #595959;font-weight:700;font-size:14px">
+                                @Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(modelItem => item.Description)
+                                <br />
+                                @Html.DisplayNameFor(model => model.Phone) : @Html.DisplayFor(modelItem => item.Phone)
+                                <br />
+                                @Html.DisplayNameFor(model => model.Rating) :
+                                @for (int i = 0; i < item.Rating; i++)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                                <br />
+                                @Html.DisplayNameFor(model => model.Email) : @Html.DisplayFor(modelItem => item.Email)
+                                <br />
+                                @Html.DisplayNameFor(model => model.IsActive)
+                                <br />
+                                @Html.DisplayNameFor(model => model.CitiesId)
+                                <br />
+                                @Html.ActionLink("Active/InActive", "ChangeStatus", new { id = item.Id }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.Id })
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p>
+                                <img src="@Url.Content(item.Image)" alt="No Image" height="180" width="180" />
+                                
+                            </p>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+    </div>
+</div>
